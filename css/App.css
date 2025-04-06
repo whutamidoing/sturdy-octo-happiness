@@ -80,6 +80,30 @@ img {
     padding: 20px;
     width: clamp(1366px, 100%, 1300px);
 }
+.searchbar {
+    display: flex;
+}
+#Submit {
+    border: 0;
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: 300ms ease;
+}
+#Submit:hover {
+    background: #ffe0fb;
+} 
+#Submit:active {
+    background: #fcb2f2;
+}
+#search {
+    border: 0;
+    border-radius: 0 10px 10px 0;
+    width: 100%;
+    padding: 10px;
+}
+
 .carousel-header {
     display: flex;
     justify-content: space-between;
@@ -209,17 +233,26 @@ img {
     height: 250px;
     gap: 10px;
 }
+.carousel-control {
+    display: flex;
+    gap: 10px;
+}
 .carousel-control > button {
-    background: #202f41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fc6ec1;
     height: fit-content;
     border: 0;
+    padding: 0 15px;
+    border-radius: 15px;
     transition: 600ms ease;
 }
 .carousel-control > button:hover {
-    background: #233750;
+    background: #ffc1e5;
 }
 .carousel-control > button:active {
-    background: #284466;
+    background: #ff50a1;
 }
 .carousel-wrapper > a {
     height: 100%;
