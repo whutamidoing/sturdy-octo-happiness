@@ -5,6 +5,10 @@
     font-style: normal;
   }
 @font-face {
+    font-family: zh;
+    src: url(../assets/fonts/zh-cn.ttf);
+}
+@font-face {
     font-family: montserrat;
     src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
@@ -74,7 +78,7 @@ img {
     flex-direction: column;
     gap: 30px;
     padding: 20px;
-    width: 100%;
+    width: clamp(1366px, 100%, 1300px);
 }
 .carousel-header {
     display: flex;
@@ -93,6 +97,8 @@ img {
     position: relative;
 }
 .card {
+    background: linear-gradient(45deg, #ffd6ee90, #ffe7f290, #fed2ff90, #ffc8f690);
+
     display: flex;
     position: absolute;
     flex-direction: column;
@@ -101,23 +107,67 @@ img {
     transition: 400ms;
     z-index: 1  ;
     overflow: hidden;   
-    border-radius: 7px 7px 25px 25px;
+    border-radius: 20px;
 
-    width: 250px;
+    width: 30%;
 }
-.card > div{
-    font-family: zh, sans-serif, Arial, Helvetica;
-    color: #fff;
-    background: linear-gradient(90deg, #215e86, #2d709c, #235475, #26506b);
+.card-image-wrapper {
+    padding: 10px 10px 0 10px;
+    aspect-ratio: 8/3;
+    width: 100%;
+    height: 100%;
+}
+.card-image-wrapper > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.card-details{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+    color: #505050;
     padding: 10px;
     width: 100%;
-    box-shadow: 0px -5px 50px 5px #2d9c8a;
 }
-.card > img {
+.recipe-attributes {
+    font-size: 0.6rem;
+    opacity: 0.8;
+}
+.recipe-traits {
+    display: flex;
     width: 100%;
-    object-fit: cover;
-    aspect-ratio: 19/10;
+    height: 10%;
+    gap: 2%;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
 }
+.card .recipe-traits::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background: #00000000;
+    transition: 600ms ease;
+}
+.card:hover .recipe-traits::-webkit-scrollbar-thumb{
+    background: #fff;
+}
+.recipe-traits::-webkit-scrollbar {
+    background-color: #00000000;
+    height: 5px;
+    margin: 5px;
+}
+.recipe-traits::-webkit-scrollbar-track-piece {
+    opacity: 0;
+}
+.trait-box {
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    background: #ffbcf6;
+}
+
 .card-0 {
     opacity: 1;
     left: 0%;
